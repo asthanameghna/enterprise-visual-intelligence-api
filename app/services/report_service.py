@@ -1,6 +1,7 @@
 import uuid
 
 from app.schemas import Issue, VisualAnalysisReport, VisualFacts
+from app.services.context_service import get_context_for_input_type
 
 
 def generate_report_from_visual_facts(
@@ -15,6 +16,7 @@ def generate_report_from_visual_facts(
         )
         for risk in visual_facts.possible_risks
     ]
+    retrieved_context = get_context_for_input_type(visual_facts.input_type)
 
     return VisualAnalysisReport(
         report_id=str(uuid.uuid4()),
@@ -23,9 +25,7 @@ def generate_report_from_visual_facts(
         detected_entities=visual_facts.detected_entities,
         visual_facts=visual_facts.visual_facts,
         issues=issues,
-        retrieved_context=[
-            "Placeholder context for future retrieval-augmented analysis."
-        ],
+        retrieved_context=retrieved_context,
         recommended_actions=[
             f"Review and address: {risk}" for risk in visual_facts.possible_risks
         ],
