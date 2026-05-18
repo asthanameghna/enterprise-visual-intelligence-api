@@ -1,3 +1,5 @@
+import base64
+
 from fastapi import HTTPException, UploadFile
 
 
@@ -9,3 +11,7 @@ def validate_image_file(file: UploadFile) -> bool:
         raise HTTPException(status_code=400, detail="Invalid image file type")
 
     return True
+
+
+def encode_image_to_base64(image_bytes: bytes) -> str:
+    return base64.b64encode(image_bytes).decode("utf-8")
