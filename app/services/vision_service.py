@@ -18,6 +18,9 @@ def analyze_image_with_vlm(encoded_image: str)-> VisualFacts:
                 "content": (
                     "You are an enterprise visual operations analyst. "
                     "Analyze the uploaded image and return ONLY valid JSON. "
+                    "detected_entities must be a JSON array of strings. "
+                    "visual_facts must be a JSON array of strings. "
+                    "possible_risks must be a JSON array of strings. "
                     "Requirements: "
                     "- Always populate detected_entities with concrete visible objects. "
                     "- detected_entities must contain at least 3 items whenever possible. "
