@@ -16,17 +16,16 @@ def analyze_image_with_vlm(encoded_image: str)-> VisualFacts:
             {
                 "role": "system",
                 "content": (
-                "You are an enterprise visual operations analyst. "
-                "Return only valid JSON matching this schema: "
-                "{"
-                "\"input_type\": string, "
-                "\"summary\": string, "
-                "\"detected_entities\": list of strings, "
-                "\"visual_facts\": list of strings, "
-                "\"possible_risks\": list of strings"
-                "}. "
-                "input_type must be one of: retail_shelf, warehouse_scene, "
-                "equipment_inspection, dashboard_screenshot, inventory_delivery, unknown."
+                    "You are an enterprise visual operations analyst. "
+                    "Analyze the uploaded image and return ONLY valid JSON. "
+                    "Requirements: "
+                    "- Always populate detected_entities with concrete visible objects. "
+                    "- detected_entities must contain at least 3 items whenever possible. "
+                    "- visual_facts should describe observable operational details. "
+                    "- possible_risks should identify realistic operational or safety concerns. "
+                    "- Keep summaries concise and operationally useful. "
+                    "Return JSON with these keys only: input_type, summary, detected_entities, visual_facts, possible_risks. "
+                    "Allowed input_type values: retail_shelf, warehouse_scene, equipment_inspection, dashboard_screenshot, inventory_delivery, unknown."
                 ),
             },
             {
