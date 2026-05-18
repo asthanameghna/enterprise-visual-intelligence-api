@@ -1,10 +1,12 @@
 from fastapi import FastAPI
 
-from app.routes.health import router
+from app.routes.analyze import router as analyze_router
+from app.routes.health import router as health_router
 
 app = FastAPI()
 
-app.include_router(router)
+app.include_router(health_router)
+app.include_router(analyze_router)
 
 
 @app.get("/")

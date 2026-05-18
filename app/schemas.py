@@ -24,3 +24,24 @@ class VisualFacts(BaseModel):
     visual_facts: list[str]
     possible_risks: list[str]
 
+
+class VisualAnalysisReport(BaseModel):
+    report_id: str
+    input_type: Literal[
+        "retail_shelf",
+        "warehouse_scene",
+        "equipment_inspection",
+        "dashboard_screenshot",
+        "inventory_delivery",
+        "unknown",
+    ]
+    summary: str
+    detected_entities: list[str]
+    visual_facts: list[str]
+    issues: list[Issue]
+    retrieved_context: list[str]
+    recommended_actions: list[str]
+    escalation_level: Literal["none", "low", "medium", "high", "critical"]
+    confidence: float
+    limitations: list[str]
+
