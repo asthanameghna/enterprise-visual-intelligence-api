@@ -80,6 +80,18 @@ Report Persistence
 Report Retrieval API
 ```
 
+## API Documentation
+
+![Swagger Docs](screenshots/swagger-docs.png)
+
+## Analysis Request
+
+![Analyze Request](screenshots/analyze-request.png)
+
+## Example Report Response
+
+![Report Response](screenshots/report-response.png)
+
 ## Example Workflow
 
 1. An operations system uploads a warehouse aisle image to `/analyze`.
