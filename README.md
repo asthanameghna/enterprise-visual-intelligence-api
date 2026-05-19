@@ -2,7 +2,7 @@
 
 ## Overview
 
-Enterprise Visual Intelligence API is a multimodal operational analysis platform for evaluating business images against operational policies and generating structured AI reports.
+Enterprise Multimodal Visual Intelligence API is a multimodal operational analysis platform for evaluating business images against operational policies and generating structured AI reports.
 
 The system accepts uploaded images, analyzes visible operational conditions with a vision-language model, retrieves policy context for the detected scenario, and returns a policy-aware report with risks, evidence, recommended actions, escalation level, confidence, and limitations.
 
@@ -50,7 +50,9 @@ Core components:
 - `app/main.py`: FastAPI application initialization and route registration.
 - `app/routes/analyze.py`: Image analysis endpoint.
 - `app/routes/health.py`: Health check endpoint.
+- `app/routes/reports.py`: Report retrieval endpoint.
 - `app/services/vision_service.py`: OpenAI multimodal analysis integration.
+- `app/services/storage_service.py`: JSON report persistence under `reports/`.
 - `app/services/context_service.py`: Policy document retrieval by input type.
 - `app/services/report_service.py`: Report assembly, issue generation, and escalation logic.
 - `app/schemas.py`: Pydantic models for API response contracts.
@@ -113,7 +115,6 @@ Report Retrieval API
 - Python multipart uploads
 - Pytest
 - HTTPX
-- ChromaDB dependency included for retrieval-oriented extension work
 
 ## Project Structure
 
@@ -125,7 +126,8 @@ Report Retrieval API
 │   ├── schemas.py
 │   ├── routes/
 │   │   ├── analyze.py
-│   │   └── health.py
+│   │   ├── health.py
+│   │   └── reports.py
 │   ├── services/
 │   │   ├── context_service.py
 │   │   ├── report_service.py
@@ -133,6 +135,8 @@ Report Retrieval API
 │   │   └── vision_service.py
 │   └── utils/
 │       └── image_utils.py
+├── reports/
+├── screenshots/
 ├── context_docs/
 │   ├── dashboard_anomaly_policy.md
 │   ├── equipment_inspection_rules.md
@@ -143,7 +147,11 @@ Report Retrieval API
 │   ├── test_analyze_mock.py
 │   ├── test_health.py
 │   ├── test_image_utils.py
-│   └── test_schema.py
+│   ├── test_schema.py
+│   └── test_storage_service.py
+├── Dockerfile
+├── docker-compose.yml
+├── .dockerignore
 ├── pytest.ini
 ├── requirements.txt
 └── README.md
@@ -159,7 +167,7 @@ Example response:
 
 ```json
 {
-  "message": "Enterprise Visual Intelligence API"
+  "message": "Enterprise Multimodal Visual Intelligence API"
 }
 ```
 
@@ -178,7 +186,7 @@ Example response:
 
 ### `POST /analyze`
 
-Accepts an uploaded image and returns a structured visual analysis report.
+Accepts an uploaded image, returns a structured visual analysis report, and persists the report as JSON under `reports/` for later retrieval.
 
 Request format:
 
@@ -200,6 +208,24 @@ Response model:
 - `escalation_level`: Overall escalation level.
 - `confidence`: Report confidence score.
 - `limitations`: Notes about AI-generated analysis and verification requirements.
+
+### `GET /reports/{report_id}`
+
+Retrieves a previously saved JSON analysis report by `report_id`.
+
+Returns `404` if no report file exists for the given identifier.
+
+Request format:
+
+```bash
+curl "http://localhost:8000/reports/{report_id}"
+```
+
+Example:
+
+```bash
+curl "http://localhost:8000/reports/mock-warehouse-001"
+```
 
 ## Example Response
 
@@ -278,11 +304,9 @@ pytest
 
 ## Future Improvements
 
-- Add persistent report storage and audit history.
 - Add authenticated access controls for enterprise deployments.
 - Replace local policy document lookup with vector retrieval over a managed knowledge base.
 - Add organization-specific policy versioning and report traceability.
 - Add async request handling for larger image workloads.
 - Add structured observability for model latency, policy retrieval, and escalation outcomes.
 - Add human review workflow integrations for high and critical escalations.
-- Add deployment assets for containerized and cloud-hosted environments.
