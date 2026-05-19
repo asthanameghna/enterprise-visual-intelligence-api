@@ -313,7 +313,7 @@ Run tests:
 pytest
 ```
 
-## Future Improvements
+## Future Roadmap
 
 - Add authenticated access controls for enterprise deployments.
 - Replace local policy document lookup with vector retrieval over a managed knowledge base.
