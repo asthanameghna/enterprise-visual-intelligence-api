@@ -1,7 +1,5 @@
 # Enterprise Multimodal Visual Intelligence API
 
-## Overview
-
 Enterprise Multimodal Visual Intelligence API is a multimodal operational analysis platform for evaluating business images against operational policies and generating structured AI reports.
 
 The system accepts uploaded images, analyzes visible operational conditions with a vision-language model, retrieves policy context for the detected scenario, and returns a policy-aware report with risks, evidence, recommended actions, escalation level, confidence, and limitations.
