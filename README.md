@@ -8,6 +8,10 @@ The project is designed as an enterprise visual intelligence system for use case
 
 The system is designed to simulate production-style enterprise AI workflows where multimodal analysis must be grounded against operational policy context before generating escalation-aware reports.
 
+## Demo
+
+![Enterprise Visual Intelligence Demo](demo/demo.gif)
+
 ## Why This Matters for Enterprise Deployment
 
 This project demonstrates how multimodal AI systems can be integrated into operational enterprise workflows where image analysis must be grounded against policy context, escalation logic, persistence, and structured reporting requirements.
