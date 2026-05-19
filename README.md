@@ -1,5 +1,7 @@
 # Enterprise Multimodal Visual Intelligence API
 
+![Enterprise Visual Intelligence Demo](demo/demo.gif)
+
 Enterprise Multimodal Visual Intelligence API is a multimodal operational analysis platform for evaluating business images against operational policies and generating structured AI reports.
 
 The system accepts uploaded images, analyzes visible operational conditions with a vision-language model, retrieves policy context for the detected scenario, and returns a policy-aware report with risks, evidence, recommended actions, escalation level, confidence, and limitations.
@@ -7,10 +9,6 @@ The system accepts uploaded images, analyzes visible operational conditions with
 The project is designed as an enterprise visual intelligence system for use cases such as warehouse safety review, retail shelf assessment, equipment inspection, dashboard anomaly review, and inventory delivery analysis.
 
 The system is designed to simulate production-style enterprise AI workflows where multimodal analysis must be grounded against operational policy context before generating escalation-aware reports.
-
-## Demo
-
-![Enterprise Visual Intelligence Demo](demo/demo.gif)
 
 ## Why This Matters for Enterprise Deployment
 
