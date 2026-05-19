@@ -1,0 +1,48 @@
+{
+  "report_id": "9c59748f-2575-4480-b094-63dd3494ec7c",
+  "input_type": "warehouse_scene",
+  "summary": "A busy warehouse filled with stacked boxes on pallets and a fork-lift in operation.",
+  "detected_entities": [
+    "forklift",
+    "pallets",
+    "cardboard boxes"
+  ],
+  "visual_facts": [
+    "The warehouse has multiple shelves filled with stacked boxes.",
+    "A forklift is being used to navigate through the aisles.",
+    "There are various sizes of boxes on the floor and shelves."
+  ],
+  "issues": [
+    {
+      "issue_type": "possible_risk",
+      "description": "Risk of accidents due to forklift operation near workers.",
+      "evidence": "Risk of accidents due to forklift operation near workers.",
+      "severity": "high"
+    },
+    {
+      "issue_type": "possible_risk",
+      "description": "Potential for boxes falling from shelves if not properly secured.",
+      "evidence": "Potential for boxes falling from shelves if not properly secured.",
+      "severity": "high"
+    },
+    {
+      "issue_type": "possible_risk",
+      "description": "Cluttered pathways may lead to tripping hazards.",
+      "evidence": "Cluttered pathways may lead to tripping hazards.",
+      "severity": "high"
+    }
+  ],
+  "retrieved_context": [
+    "# Warehouse Safety Rules\n\n- If emergency exits, walkways, or fire equipment are visibly blocked, classify as critical.\n- If boxes are stacked unsafely or leaning, classify as high.\n- If liquid spills or floor obstructions are visible, classify as high."
+  ],
+  "recommended_actions": [
+    "Review and address: Risk of accidents due to forklift operation near workers.",
+    "Review and address: Potential for boxes falling from shelves if not properly secured.",
+    "Review and address: Cluttered pathways may lead to tripping hazards."
+  ],
+  "escalation_level": "high",
+  "confidence": 0.85,
+  "limitations": [
+    "AI-generated analysis; verify findings before acting."
+  ]
+}
