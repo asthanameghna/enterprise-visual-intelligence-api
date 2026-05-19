@@ -86,7 +86,7 @@ Report Retrieval API
 
 ## Analysis Request
 
-![Analyze Request](screenshots/analyze-request.png)
+![Analyze Request](screenshots/analyze-response.png)
 
 ## Example Report Response
 
