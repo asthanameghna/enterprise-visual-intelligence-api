@@ -56,6 +56,30 @@ Core components:
 - `app/schemas.py`: Pydantic models for API response contracts.
 - `context_docs/`: Domain policy documents used during report generation.
 
+## Architecture Flow
+
+```text
+Client Upload
+    ↓
+FastAPI Endpoint
+    ↓
+Image Validation
+    ↓
+Base64 Encoding
+    ↓
+OpenAI Vision Model
+    ↓
+Structured VisualFacts Extraction
+    ↓
+Context Retrieval
+    ↓
+Policy-Aware Report Generation
+    ↓
+Report Persistence
+    ↓
+Report Retrieval API
+```
+
 ## Example Workflow
 
 1. An operations system uploads a warehouse aisle image to `/analyze`.
