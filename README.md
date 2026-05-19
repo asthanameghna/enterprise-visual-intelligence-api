@@ -244,7 +244,7 @@ curl "http://localhost:8000/reports/mock-warehouse-001"
 
 ```json
 {
-  "report_id": "mock-warehouse-001",
+  "report_id": "f60a2181-1786-4315-a574-23446abf2fde",
   "input_type": "warehouse_scene",
   "summary": "Warehouse aisle shows a pallet partially blocking a marked walkway.",
   "detected_entities": [
@@ -307,6 +307,12 @@ Run the API locally:
 
 ```bash
 uvicorn app.main:app --reload
+```
+
+Docker deployment:
+
+```bash
+docker compose up --build
 ```
 
 Run tests:
