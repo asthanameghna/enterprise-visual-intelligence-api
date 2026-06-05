@@ -5,6 +5,7 @@
 ![FastAPI](https://img.shields.io/badge/FastAPI-Framework-009688)
 ![Docker](https://img.shields.io/badge/Docker-Containerized-2496ED)
 ![OpenAI](https://img.shields.io/badge/OpenAI-GPT--4o-green)
+![License](https://img.shields.io/badge/License-MIT-yellow.svg)
 
 
 Enterprise Multimodal Visual Intelligence API is a multimodal operational analysis platform for evaluating business images against operational policies and generating structured AI reports.
