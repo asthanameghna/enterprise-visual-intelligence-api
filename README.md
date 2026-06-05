@@ -1,5 +1,12 @@
 # Enterprise Multimodal Visual Intelligence API
 
+[![CI](https://github.com/asthanameghna/enterprise-visual-intelligence-api/actions/workflows/tests.yml/badge.svg)](https://github.com/asthanameghna/enterprise-visual-intelligence-api/actions/workflows/tests.yml)
+![Python](https://img.shields.io/badge/python-3.11-blue)
+![FastAPI](https://img.shields.io/badge/FastAPI-Framework-009688)
+![Docker](https://img.shields.io/badge/Docker-Containerized-2496ED)
+![OpenAI](https://img.shields.io/badge/OpenAI-GPT--4o-green)
+
+
 Enterprise Multimodal Visual Intelligence API is a multimodal operational analysis platform for evaluating business images against operational policies and generating structured AI reports.
 
 ![Enterprise Visual Intelligence Demo](demo/demo.gif)
