@@ -8,3 +8,6 @@ openai
 chromadb
 pytest
 httpx
+sqlalchemy
+psycopg[binary]
+alembic
