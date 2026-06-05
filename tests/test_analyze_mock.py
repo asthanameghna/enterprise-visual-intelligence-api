@@ -21,6 +21,9 @@ def test_analyze_mock():
     with patch(
         "app.routes.analyze.analyze_image_with_vlm",
         return_value=mock_visual_facts,
+    ), patch(
+        "app.routes.analyze.save_report_to_db",
+        return_value="mock-report-id",
     ):
         response = client.post(
             "/analyze",
